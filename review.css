@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2c0221, #8b46f3);
+    padding: 20px;
+}
+
+.review-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #202124;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: left; /* Align labels to the left */
+    margin: 15px 0 5px;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Keep the submit button centered */
+input[type="submit"] {
+    background-color: #121779;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Flexbox for rating and label alignment */
+.rating-container {
+    display: flex;
+    align-items: center;  /* Vertically center rating label and stars */
+    justify-content: flex-start; /* Align to the left */
+    margin-top: 15px;
+}
+
+.rating-container label {
+    margin-right: 15px; /* Space between label and stars */
+}
+
+/* Center the rating stars horizontally */
+.rating {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the stars' order */
+    justify-content: center;
+    margin-top: 0;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 40px; /* Increase the star size */
+    color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 5px; /* Add spacing between stars */
+}
+
+.rating input:checked ~ label {
+    color: #ffdd57;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffdd57;
+}
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}

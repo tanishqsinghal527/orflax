@@ -1,0 +1,99 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1d1d;
+  }
+  
+  
+  #animation-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #left-plug {
+    position: absolute;
+    font-size: 200px; /* Increased size */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(90deg); /* Rotate the icon */
+    transition: transform 2s ease-in-out, opacity 1s ease-in-out; /* Apply transition to transform */
+  }
+  
+  #right-plug {
+    position: absolute;
+    font-size: 150px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    transition: 2s ease-in-out;
+  
+  }
+  
+  
+  .wire {
+    position: absolute;
+    height: 10px;
+    background-color: rgb(137,8,8);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    transition: width 2s ease-in-out;
+  }
+  
+  #right-wire {
+    right: 0;
+  }
+  
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 300px;
+    color: #ffd700;
+    opacity: 0;
+    font-family: "Lora", serif;
+    text-decoration: underline;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .black-wire {
+    position: absolute;
+    height: 10px;
+    background-color: black;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px; /* Length of the black wire */
+    left: 0; /* Position it at the left */
+    transition: width 2s ease-in-out;
+  }
+  
+  #left-plug {
+    position: absolute;
+    font-size: 200px; /* Increased size */
+    top: 50%;
+    left: 450px; /* Shifted 50px to the right */
+    transform: translateY(-50%) rotate(90deg); /* Rotate the icon */
+    transition: transform 2s ease-in-out, opacity 1s ease-in-out; /* Apply transition to transform */
+  }
+/* Existing styles... */
+
+@media (max-width: 600px) {
+  #left-plug,
+  #right-plug,
+  .wire,
+  .black-wire {
+      display: none; /* Hide all elements except text */
+  }
+
+  #text {
+      opacity: 1; /* Ensure text is visible */
+      font-size: 20vw; /* Adjust font size for small screens */
+  }
+}
+
+/* Other existing styles... */

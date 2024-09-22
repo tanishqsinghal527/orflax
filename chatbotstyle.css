@@ -1,0 +1,227 @@
+body{
+    background-color: grey;
+}
+/* Chat Icon */
+.chat-icon {
+    position: fixed;
+    align-items: center;
+    margin-left: 47%;
+    margin-top: 20%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-icon .icon {
+    width: 30%;
+    height: 30%;
+}
+
+/* Chat Popup */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 320px;
+    border: 2px solid #4a148c; /* Dark purple border */
+    background-color: #f3e5f5; /* Light purple background */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: #6a1b9a; /* Deep purple background */
+    color: white;
+    padding: 12px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #d1c4e9; /* Light purple close button */
+}
+
+/* Chat Body */
+.chat-body {
+    padding: 15px;
+    background-color: #ede7f6; /* Very light purple background */
+}
+
+.chat-message {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #4a148c; /* Dark purple text */
+}
+
+textarea {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #7b1fa2; /* Medium purple border */
+    border-radius: 8px;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+    background-color: #f3e5f5; /* Light purple background */
+    color: #4a148c; /* Dark purple text */
+}
+
+/* Chat Footer */
+.chat-footer {
+    padding: 12px;
+    text-align: right;
+    background-color: #9575cd; /* Soft purple background */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#sendBtn {
+    background-color: #4a148c; /* Dark purple button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#sendBtn:hover {
+    background-color: #311b92; /* Darker purple on hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2c0221, #8b46f3);
+    padding: 20px;
+}
+
+.review-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #202124;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: left; /* Align labels to the left */
+    margin: 15px 0 5px;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Keep the submit button centered */
+input[type="submit"] {
+    background-color: #121779;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Flexbox for rating and label alignment */
+.rating-container {
+    display: flex;
+    align-items: center;  /* Vertically center rating label and stars */
+    justify-content: flex-start; /* Align to the left */
+    margin-top: 15px;
+}
+
+.rating-container label {
+    margin-right: 15px; /* Space between label and stars */
+}
+
+/* Center the rating stars horizontally */
+.rating {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the stars' order */
+    justify-content: center;
+    margin-top: 0;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 40px; /* Increase the star size */
+    color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 5px; /* Add spacing between stars */
+}
+
+.rating input:checked ~ label {
+    color: #ffdd57;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffdd57;
+}
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* General Body Styling */
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.founder-section {
+    display: flex;
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;
+    flex-wrap: wrap;  /* Ensure it wraps properly on smaller screens */
+    padding: 50px;
+    background-color: #f5f9fe;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 1000px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.founder-message {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.founder-message h1 {
+    font-size: 36px;
+    color: #0307B2;
+    margin-bottom: 20px;
+}
+
+.founder-message p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #202124;
+}
+
+.highlight {
+    background-color: #0065be;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* Founder image styles */
+.founder-image {
+    text-align: center;
+}
+
+.founder-image img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3D hover effect and shadow increase */
+.founder-image img:hover {
+    transform: translateZ(20px) scale(1.05); /* Slight scaling and 3D effect */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Increase shadow */
+}
+
+/* Founder name styles */
+.founder-image h3 {
+    font-size: 22px;
+    color: #202124;
+    margin-top: 15px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+/* Social icons styles */
+.social-icons a {
+    color: #0077B5; /* LinkedIn blue */
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add 3D effect and shadow on hover */
+.social-icons a:hover {
+    transform: translateZ(20px) scale(1.2); /* Enlarge the icons slightly */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add drop shadow */
+    color: #0056b3; /* Darker LinkedIn blue */
+}
+
+.social-icons a:nth-child(2) {
+    color: #4267B2; /* Facebook blue */
+}
+
+.social-icons a:nth-child(2):hover {
+    color: #365899; /* Darker Facebook blue */
+    transform: translateZ(20px) scale(1.2); /* Enlarge the Facebook icon */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add drop shadow */
+}
+
+/* About Us Section */
+#aboutUs {
+    padding: 60px 20px;
+    background-color: #f5f7fa; /* Light background color */
+    color: #333; /* Text color */
+    text-align: center; /* Center-align the content */
+}
+
+.heading-success {
+    font-size: 36px;
+    color: #2491F0; /* Blue color for the heading */
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Content inside About Us Section */
+.aboutUs-content {
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 0 15%;
+    color: #555; /* Slightly darker text for body */
+    text-align: left; /* Left-align paragraphs */
+}
+
+
+/* Strong tags for highlighting important text */
+strong {
+    color: #2491F0; /* Blue color for emphasized text */
+    font-weight: bold;
+    font-size: larger;
+}
+
+/* Media Query for Responsiveness */
+@media screen and (max-width: 768px) {
+    .aboutUs-content {
+        padding: 0 5%; /* Decrease padding for smaller screens */
+    }
+
+    .heading-success {
+        font-size: 28px; /* Smaller heading on smaller screens */
+    }
+
+    .aboutUs-content p {
+        font-size: 16px; /* Slightly smaller text on smaller screens */
+    }
+}
+
+
+
+.wrapper {
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    position: relative;
+    z-index: 2;
+    opacity: 1; /* Make sure the text is fully visible */
+    transform: translateY(0); /* Ensure proper alignment */
+}
+
+.card > .row > .description p {
+    font-size: 15px; /* Increase font size */
+    font-weight: 500; /* Optional: Makes the text bold */
+    color: #dfd4d4; /* Ensure the text color is visible */
+    background: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    padding: 10px; /* Adjust padding for better spacing */
+    border-radius: 30px; /* Rounded corners */
+    text-shadow: none; /* Remove text shadow */
+}
+
+
+/* Ensure the card layout remains the same */
+input:checked + label {
+    width: 600px; /* You can adjust this width if needed */
+}
+
+.description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('./assets/card-5.jpeg');
+}
+.card[for="c2"] {
+    background-image: url('./assets/card-2.jpeg');
+}
+.card[for="c3"] {
+    background-image: url('./assets/card-6.jpeg');
+}
+.card[for="c4"] {
+    background-image: url('./assets/card-4.png');
+}
+
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #00306b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    
+    /* Add transition for smooth effect */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #2c2c2c;
+    
+    /* Rising effect on hover */
+    transform: translateY(-5px);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    color: rgba(4, 4, 4, 0.8);
+    background-color: #d1e7f8;
+}
+
+.logo img {
+    width: 200px; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff; /* White background */
+    color: #898989; /* Dark icon color */
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #000000; /* Lighter background on hover */
+    color: #727272; /* Slightly darker icon color on hover */
+}
+
+copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8); /* Slight opacity */
+}

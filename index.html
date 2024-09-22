@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orflax</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset styles */
+       
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+body{
+    background-color: #333333;
+    color: white;
+}
+/* Navigation bar styles */
+#navigation_bar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Full width of the screen */
+    justify-content: space-around; /* Space around links for even distribution */
+}
+
+#navigation_bar li {
+    position: relative;
+}
+
+#oipl {
+    margin-right: 20px; /* Adds space between the image and the navigation links */
+}
+
+nav {
+    position: relative;
+    width: 100%; /* Full width of the screen */
+    height: 60px;
+    background: #222;
+    display: flex;
+    justify-content: space-around; /* Space out navigation items */
+    align-items: center;
+    border-radius: 0; /* Remove border radius for full width */
+}
+
+/* Link styles */
+nav a {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    z-index: 1;
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+    color: #f5f0f0; /* Change text color on hover */
+}
+
+/* Span for hover effect */
+nav span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%; /* Use a percentage-based width */
+    height: 100%;
+    background: linear-gradient(45deg, #4f1947, #e147fc);
+    border-radius: 8px;
+    transition: left 0.3s ease, width 0.3s ease; /* Smooth animation */
+}
+
+/* Hover effects for each navigation link, using percentage values */
+li a:nth-child(1):hover~.nav-span {
+    left: 0; /* Start at 0% for the first link */
+    width: 15%; /* Width of the span relative to the link size */
+}
+
+li a:nth-child(2):hover~.nav-span {
+    left: 15%; /* Move span by 15% for the second link */
+    width: 15%;
+}
+
+li a:nth-child(3):hover~.nav-span {
+    left: 30%; /* Move span by 30% for the third link */
+    width: 20%;
+}
+
+li a:nth-child(4):hover~.nav-span {
+    left: 50%; /* Move span by 50% for the fourth link */
+    width: 15%;
+}
+
+li a:nth-child(5):hover~.nav-span {
+    left: 65%; /* Move span by 65% for the fifth link */
+    width: 15%;
+}
+
+li a:nth-child(6):hover~.nav-span {
+    left: 80%; /* Move span by 80% for the sixth link */
+    width: 20%;
+}
+
+/* Responsive styling for mobile screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        justify-content: flex-start; /* Align items to the top */
+        height: auto; /* Auto height for stacked layout */
+    }
+
+    #navigation_bar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        padding: 10px 0;
+        width: 100%; /* Full width */
+    }
+
+    #navigation_bar li {
+        margin: 5px 0; /* Add space between stacked items */
+    }
+
+    #navigation_bar a {
+        padding: 10px;
+        width: 100%; /* Full width for links */
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Adjust span for vertical layout */
+    nav span {
+        display: none; /* Hide the hover effect on mobile for simplicity */
+    }
+}
+
+
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+}
+
+.left-part {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center text */
+    font-size: x-large;
+}
+
+.right-part {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center text */
+    font-size: larger;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Allow height to adjust */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust font size for mobile */
+    }
+
+    p {
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+}
+
+.industries-container {
+    width: 100%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 20px auto; /* Center container */
+    padding: 20px; /* Padding for the container */
+    text-align: center; /* Center align text */
+    background-color: #222;
+    border: 2px solid #e147fc;
+    border-radius: 74px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.industries-heading {
+    font-size: 2.5em; /* Heading size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.industries-subheading {
+    font-size: 1.2em; /* Subheading size */
+    margin-bottom: 20px; /* Space below subheading */
+}
+
+.industries-bottom-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between sections */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+.industries-left-part {
+    flex: 1; /* Take equal space */
+    padding: 20px; /* Padding inside left part */
+    min-width: 300px; /* Minimum width to maintain structure */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.industries-right-part {
+    flex: 1; /* Take equal space */
+    padding: 20px; /* Padding inside right part */
+    min-width: 300px; /* Minimum width to maintain structure */
+}
+
+.industries-section-title {
+    font-size: 1.5em; /* Size for section titles */
+    margin-top: 10px; /* Space above section titles */
+}
+
+.industries-text {
+    font-size: 1em; /* Size for paragraphs */
+    margin: 10px 0; /* Space above and below paragraphs */
+}
+
+video {
+    width: 100%; /* Full width for the video */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .industries-heading {
+        font-size: 2em; /* Adjust heading size for mobile */
+    }
+
+    .industries-subheading {
+        font-size: 1em; /* Adjust subheading size for mobile */
+    }
+
+    .industries-section-title {
+        font-size: 1.2em; /* Adjust section title size for mobile */
+    }
+}
+
+.choose-us-container {
+    width: 100%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 20px auto; /* Center container */
+    padding: 20px; /* Padding for the container */
+    text-align: center; /* Center align text */
+}
+
+.choose-us-heading {
+    font-size: 2.5em; /* Heading size */
+    margin-bottom: 10px; /* Space below heading */
+    text-align: center;
+}
+
+.choose-us-description {
+    font-size: 1.2em; /* Description size */
+    margin-bottom: 20px; /* Space below description */
+    text-align: center;
+}
+
+.choose-us-bottom-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between sections */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+
+.choose-us-section {
+    flex: 1; /* Take equal space */
+    padding: 20px; /* Padding inside each section */
+    min-width: 300px; /* Minimum width to maintain structure */
+    box-sizing: border-box; /* Include padding in width calculation */
+    text-align: center; /* Left-align text */
+    border: 2px solid #c710f5;
+    border-radius: 35px;
+    margin: 3px;
+    background-color: #000000;
+}
+.choose-us-section:hover{
+    background-color: #0056b3; 
+    color: white;     /*hover ki transition parth btaega*/
+}
+
+.choose-us-section-title {
+    font-size: 1.5em; /* Size for section titles */
+    margin-top: 10px; /* Space above section titles */
+}
+
+.choose-us-text {
+    font-size: 1em; /* Size for paragraphs */
+    margin: 10px 0; /* Space above and below paragraphs */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .choose-us-heading {
+        font-size: 2em; /* Adjust heading size for mobile */
+    }
+
+    .choose-us-description {
+        font-size: 1em; /* Adjust description size for mobile */
+    }
+
+    .choose-us-section-title {
+        font-size: 1.2em; /* Adjust section title size for mobile */
+    }
+}
+
+
+/* Feedback Section */
+.feedback-section {
+    padding: 20px;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feedback-box {
+    flex: 1 1 45%; /* Each feedback box takes up 45% width */
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: #121010;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .feedback-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feedback-box {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.modern-button {
+    position: fixed;
+    top: 65%;
+    right: 20px;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.help-desk {
+    flex: 6;
+    background-color: #434242;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.large-help {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 60px;
+    font-size: 34px;
+    border-radius: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.5) translateX(-50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.large-help.visible {
+    opacity: 1;
+    transform: scale(1) translateX(-50%);
+}
+
+.footer {
+    flex: 4;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modern-button:hover, .large-help:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 130px; /* Adjust as necessary */
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 10px;
+}
+
+.static-button {
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #211d20;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 14px 18px rgba(0, 0, 0, 0.1);
+}
+
+.static-button:hover {
+    background: linear-gradient(135deg, #0056b3, #760459);
+    transform: scale(1.05);
+    box-shadow: 0px 14px 18px rgba(69, 1, 48, 0.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .modern-button {
+        right: 10px; /* Adjust for smaller screens */
+        padding: 10px 20px;
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
+
+    .large-help {
+        padding: 15px 30px; /* Adjusted padding */
+        font-size: 20px; /* Adjusted font size */
+        top: 15%;
+    }
+
+    .button-container {
+        margin-top: 50px; /* Reduced margin */
+    }
+
+    .button-column {
+        width: 100%; /* Full width on small screens */
+        margin: 5px 0; /* Reduced margin */
+    }
+
+    .static-button {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+}
+
+
+    </style>
+
+
+</head> 
+<body>
+    <button id="helpButton" class="modern-button" aria-label="Help Desk">
+        <i class="fa-solid fa-plane-departure fa-flip-horizontal fa-lg" style="color: #74C0FC;"></i> Help Desk
+    </button>
+    <nav>
+        <ul id="navigation_bar" class="hidden">
+            <li><img id="oipl" src="assets/leetcode_badge.png" width="150px"></li>
+            <li>
+                <a class="nav-a" href="index.html">Home</a>
+                <a class="nav-a" href="about.html">About</a>
+                <a class="nav-a" href="profile.html">Your Profile</a>
+                <a class="nav-a" href="product.html">Product</a>
+                <a class="nav-a" href="new gallary.html">Gallery</a>
+                <a class="nav-a" href="contact.html">Contact</a>
+                <span class="nav-span"></span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video autoplay loop muted style="border-radius: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); ">
+            <source src="assets/loop1212.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="container">
+        <div class="left-part">
+            <h2>Innovative Solutions For Your Industrial Needs</h2>
+        </div>
+        <div class="right-part" 
+        style="background-color: #000000; 
+               
+               padding: 30px; /* Increased padding for a larger box */
+               border: 2px solid #c710f5; 
+               border-radius: 50px; 
+               transition: transform 0.3s ease, box-shadow 0.3s ease; 
+               box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+               max-width: 600px; /* Increased width */
+               margin: 20px 20px 20px 0; /* Added right margin */" >
+       
+       <p>Welcome to Orflax, where we provide cutting-edge industrial solutions tailored to your business.</p>
+   </div>
+    </div>
+    <div class="container">
+        <div class="left-part">
+            <h2>Transforming Industries with Tailored Solutions</h2>
+        </div>
+        <div class="right-part"
+        style="background-color: #000000; 
+                
+               padding: 30px; /* Increased padding for a larger box */
+               border: 2px solid #c710f5; 
+               border-radius: 50px; 
+               transition: transform 0.3s ease, box-shadow 0.3s ease; 
+               box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+               max-width: 600px; /* Increased width */
+               margin: 20px 20px 20px 0; /* Added right margin */" 
+       >
+            <p>At Orflax, we specialize in delivering comprehensive industrial solutions that cater to diverse sectors. Our services are designed to enhance operational efficiency and drive innovation. With a commitment to quality and customer satisfaction we empower businesses to thrive in a competitive landscape.</p>
+        </div>
+    </div>
+
+    <div class="industries-container">
+        <h1 class="industries-heading">Explore Our Key Industries</h1>
+        <p class="industries-subheading">At Orflax, we cater to diverse Industries, providing tailored solutions that enhance operational efficiency. Our expertise ensures that each sector receives the specialized support it needs to thrive.</p>
+        
+        <div class="industries-bottom-container">
+            <div class="industries-left-part">
+                <h3 class="industries-section-title">Manufacturing Solutions for Optimal Performance</h3>
+                <br>
+                <br>
+                <br>
+                
+                <h3 class="industries-section-title">Energy Sector Services for Sustainable Growth</h3>
+                <br>
+                <br>
+                <br>
+
+                <h3 class="industries-section-title">Logistics Support for Enhanced Supply Chain</h3>
+                <br>
+                <br>
+                <br>
+
+            </div>
+            <div class="industries-right-part">
+                <video autoplay loop muted>
+                    <source src="assets/factory-wire.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose-us-container">
+        <h1 class="choose-us-heading">Why Choose Us</h1>
+        <p class="choose-us-description">Choosing Orflax means choosing reliability and expertise that you can trust. Our dedicated customer support ensures that your needs are met promptly and effectively.</p>
+        
+        <div class="choose-us-bottom-container">
+            <div class="choose-us-section">
+                <h3 class="choose-us-section-title">PERFORMANCE AND RELIABILITY</h3>
+                <p class="choose-us-text">Human Capital leverages research, analytics, and industry insights to help design and execute critical programs from business-driven HR to innovative talent, leadership, and change programs.</p>
+            </div>
+            <div class="choose-us-section">
+                <h3 class="choose-us-section-title">BEST QUALITY</h3>
+                <p class="choose-us-text">Works with senior executives to help them solve their toughest and most complex problems by bringing an approach to executable strategy that combines deep industry knowledge and insight.</p>
+            </div>
+            <div class="choose-us-section">
+                <h3 class="choose-us-section-title">TECHNOLOGICAL DEVELOPMENT</h3>
+                <p class="choose-us-text">Delivers solutions that help drive transformation, improve productivity, and streamline business operations. Our practical, innovative solutions are linked to measurable goals to help our clients.</p>
+            </div>
+        </div>
+    </div>
+      
+    
+    
+    <div class="feedback-section">
+        <h1><center>Client Feedback</center></h1>
+        <div class="feedback-container">
+            <div class="feedback-box" style="margin: 16px;">
+                <p><i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p><br>
+                <p>Orflax transformed our operations with their innovative solutions. Their team was exceptional every step of the way!</p><br>
+                <p><strong><font color="#c710f5" size="5px">Jane Doe</font></strong><br>CEO, Tech Innovations</p>
+            </div>
+            <div class="feedback-box"style="margin: 16px;" >
+                <p><i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p><br>
+                <p>Working with Orflax was a game changer for us. Their expertise made all the difference!</p><br>
+                <p><strong><font color="#c710f5" size="5px" >John Smith</font></strong><br>Director, Global Core</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        <div class="help-desk">
+            <button class="modern-button large-help" aria-label="Help Desk Large">
+                <i class="fa-solid fa-plane-departure fa-lg" style="color: #74C0FC;"></i> How Can We Help You?
+            </button>
+
+            <div class="button-container">
+                <div class="button-column">
+                    <button class="static-button" onclick="window.location.href='contact.html'" >Let’s Connect! <i class="fa-brands fa-connectdevelop"></i></button>
+                    <button class="static-button" onclick="window.location.href='review.html' ">Please Leave a Review! <i class="fa-solid fa-pager"></i></button>
+                </div>
+                <div class="button-column">
+                    <button class="static-button" onclick="window.location.href='product.html' ">Let’s Buy New Products <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="static-button" onclick="redirectToSite()">What’s New in the Market? <i class="fa-solid fa-shop"></i></button>
+                </div>
+                <div class="button-column">
+                    <button class="static-button"  onclick="window.location.href='chatbotindex.html' " >Live Chat  <i class="fa-brands fa-rocketchat"></i></button>
+                    <button class="static-button" onclick="window.location.href='profile.html'">Make a Profile! <i class="fa-solid fa-user"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </div>
+   
+    <script src="app.js"></script>
+</body>
+
+</html>
